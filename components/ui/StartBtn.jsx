@@ -7,8 +7,8 @@ export const StartBtn = ({ txt }) => {
     <>
       <button>
         <Link
-          className="inline-block py-2 px-6 bg-green-600 hover:bg-green-700 text-white font-bold leading-loose transition duration-250 rounded-l-xl rounded-t-xl"
-          href="/"
+          className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-l-xl rounded-t-xl transition duration-200"
+          href="#"
         >
           {txt}
         </Link>

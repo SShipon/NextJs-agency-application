@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ButtonUi } from "../ui/ButtonUi";
 import { StartBtn } from "../ui/StartBtn";
+import Image from "next/image";
 
 const Contact = () => {
   return (
@@ -12,20 +13,22 @@ const Contact = () => {
           <div className="mb-16 lg:mb-0 max-w-2xl lg:w-1/2 px-4">
             <Link
               className="mb-6 inline-block text-3xl font-bold leading-none"
-              href="#"
+              href="/"
             >
-              <img
+              <Image
                 className="h-12"
-                src="atis-assets/logo/atis/atis-mono-sign.svg"
+                src="/atis-assets/logo/atis/atis-mono-sign.svg"
                 alt=""
-                width="auto"
+                width={100}
+                height={100}
+                
               />
             </Link>
             <h2 className="mb-4 text-4xl md:text-5xl font-bold font-heading">
               So much more than a business analytics tool
             </h2>
             <p className="mb-8 text-gray-500 leading-loose">
-            Business Analytics tools that we'll be discussing in detail.
+            Business Analytics tools that we will be discussing in detail.
             </p>
             <StartBtn txt="Get Started" />
           </div>
