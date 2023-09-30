@@ -1,11 +1,11 @@
 export async function generateMetadata() {
   return {
-    title: "Projects",
+    title: "Team",
   };
 }
 
-const ProjectsLayout = ({ children }) => {
+const TeamLayout = ({ children }) => {
   return <div>{children}</div>;
 };
 
-export default ProjectsLayout;
+export default TeamLayout;
