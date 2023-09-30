@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <NextTopLoader color="#266969" height={3} speed={200} />
+        <NextTopLoader color="#269669" height={4} speed={200} />
         <Navbar />
         <main>{children}</main>
         <Footer />
