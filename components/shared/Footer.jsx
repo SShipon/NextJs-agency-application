@@ -145,8 +145,8 @@ const Footer = () => {
                 <Image
                   src="atis-assets/social/facebook.svg" 
                   alt="facebook"
-                  width={30}
-                  height={30}
+                  width={25}
+                  height={25}
                   priority={true}
                 />
               </Link>
@@ -157,8 +157,8 @@ const Footer = () => {
                 <Image
                   src="atis-assets/social/twitter.svg"
                   alt="twitter"
-                  width={30}
-                  height={30}
+                  width={25}
+                  height={25}
                   priority={true}
                 />
               </Link>
@@ -169,8 +169,8 @@ const Footer = () => {
                 <Image
                   src="atis-assets/social/instagram.svg"
                   alt="instagram"
-                  width={30}
-                  height={30}
+                  width={25}
+                  height={25}
                   priority={true}
                 />
               </Link>

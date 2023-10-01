@@ -102,7 +102,7 @@ const FeatureProjects = () => {
           </div>
           <div className="text-center">
             <Link
-              className="md:hidden inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-green-600 hover:bg-green-700 text-gray-50 font-bold leading-loose transition duration-200"
+              className="md:hidden inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-emerald-600 hover:bg-emerald-700 text-gray-50 font-bold leading-loose transition duration-200"
               href="/"
             >
               View More Projects

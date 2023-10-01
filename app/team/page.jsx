@@ -1,7 +1,12 @@
+import Brands from "@/components/Brands"
+import TeamMember from "@/components/TeamMember"
 
 const TeamPage = () => {
   return (
-    <div>page</div>
+    <div>
+      <TeamMember />
+      <Brands />
+    </div>
   )
 }
 

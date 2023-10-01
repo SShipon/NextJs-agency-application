@@ -1,8 +1,13 @@
+import Brands from "@/components/Brands";
+import Services from "@/components/Services";
 
 const ServicesPage = () => {
   return (
     <> 
-     <div>page</div>
+     <div>
+       <Services />
+       <Brands />
+     </div>
     </>
   )
 }
