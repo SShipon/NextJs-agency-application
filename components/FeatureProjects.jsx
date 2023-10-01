@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { StartBtn } from "./ui/StartBtn";
 
-const FeatureProjects = () => {
+const FeatureProjects = ({ txt }) => {
+  
   return (
     <section>
       <div className="py-20 bg-gray-50 radius-for-skewed">
@@ -10,13 +11,13 @@ const FeatureProjects = () => {
           <div className="mb-16 flex flex-wrap justify-center md:justify-between items-center">
             <div className="text-center lg:text-left">
               <span className="text-emerald-600 font-bold">
-               It is possible to build a business
+                It is possible to build a business
               </span>
               <h2 className="text-4xl lg:text-5xl font-bold font-heading">
                 Featured Projects
               </h2>
             </div>
-           <StartBtn txt="View More Projects" />
+            {txt ? <StartBtn txt="View More Projects" /> : null}
           </div>
           <div className="flex flex-wrap -mx-4 mb-4">
             <div className="w-full md:w-1/2 lg:w-1/3 mb-8 px-4">
@@ -44,7 +45,7 @@ const FeatureProjects = () => {
                 <div className="absolute inset-0 p-6 flex flex-col items-start">
                   <span className="text-gray-400">2021</span>
                   <p className="mb-auto text-xl lg:text-2xl text-white font-bold">
-                  It is much more challenging to do so
+                    It is much more challenging to do so
                   </p>
                   <Link
                     className="inline-block py-2 px-4 border-2 border-gray-400 hover:border-white bg-transparent text-gray-50 hover:bg-white hover:text-gray-900 transition duration-200 rounded-l-xl rounded-t-xl font-bold leading-loose"
@@ -99,14 +100,6 @@ const FeatureProjects = () => {
                 />
               </Link>
             </div>
-          </div>
-          <div className="text-center">
-            <Link
-              className="md:hidden inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-emerald-600 hover:bg-emerald-700 text-gray-50 font-bold leading-loose transition duration-200"
-              href="/"
-            >
-              View More Projects
-            </Link>
           </div>
         </div>
       </div>

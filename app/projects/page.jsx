@@ -1,8 +1,14 @@
+import Brands from "@/components/Brands";
+import FeatureProjects from "@/components/FeatureProjects";
+
 
 const ProjectPage = () => {
   return (
     <> 
-      <div>page</div>
+      <div>
+        <FeatureProjects />
+        <Brands />
+      </div>
     </>
   )
 }

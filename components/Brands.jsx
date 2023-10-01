@@ -30,6 +30,7 @@ const Brands = () => {
                 width={120}
                 height={32}
                 priority={true}
+                
               />
             </Link>
           </div>
