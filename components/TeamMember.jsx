@@ -1,7 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const TeamMember = () => {
+async function getData() {
+  const data = await fetch(process.env.BASE_URL + "TeamList");
+
+  if (!data.ok) throw new Error("Team List data calling failed");
+
+  return data.json();
+}
+
+const TeamMember = async () => {
+  const teamData = await getData();
+
   return (
     <>
       <section>
@@ -16,206 +26,59 @@ const TeamMember = () => {
               </h2>
             </div>
             <div className="flex flex-wrap -mx-4">
-              <div className="mb-6 w-full lg:w-1/2 px-4">
-                <div className="flex flex-wrap items-center bg-white rounded shadow overflow-hidden">
-                  <Image
-                    className="w-full lg:w-1/3 h-80 object-cover"
-                    src="/hero/hero1.png"
-                    alt="danny image"
-                    width={100}
-                    height={100}
-                    priority={true}
-                  />
-                  <div className="w-full lg:w-2/3 lg:pl-6 p-4">
-                    <h4 className="mb-2 text-2xl font-bold font-heading">
-                      Danny Bailey
-                    </h4>
-                    <p className="mb-4 text-gray-500 leading-loose">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed vitae felis at ante bibendum mollis et et mauris.
-                    </p>
-                    <div className="flex">
-                      <Link className="mr-3" href="#">
+              {teamData?.length > 0
+                ? teamData.map((item, i) => (
+                    <div key={i} className="mb-6 w-full lg:w-1/2 px-4">
+                      <div className="flex flex-wrap items-center bg-white rounded shadow overflow-hidden">
                         <Image
-                          src="atis-assets/social/facebook.svg"
-                          alt="facebook"
-                          width={30}
-                          height={30}
+                          className="w-full lg:w-1/3 h-80 object-cover"
+                          src={item.image}
+                          alt=""
+                          width={500}
+                          height={500}
                           priority={true}
                         />
-                      </Link>
-                      <Link className="mr-3" href="#">
-                        <Image
-                          src="atis-assets/social/twitter.svg"
-                          alt="twitter"
-                          width={30}
-                          height={30}
-                          priority={true}
-                        />
-                      </Link>
-                      <Link href="#">
-                        <Image
-                          src="atis-assets/social/instagram.svg"
-                          alt="instagram"
-                          width={30}
-                          height={30}
-                          priority={true}
-                        />
-                      </Link>
+                        <div className="w-full lg:w-2/3 lg:pl-6 p-4">
+                          <h4 className="mb-2 text-2xl font-bold font-heading">
+                            {item.name}
+                          </h4>
+                          <p className="mb-4 text-gray-500 leading-loose">
+                            {item.bio}
+                          </p>
+                          <div className="flex">
+                            <Link className="mr-3" href="#">
+                              <Image
+                                src="atis-assets/social/facebook.svg"
+                                alt=""
+                                width={30}
+                                height={30}
+                                priority={true}
+                              />
+                            </Link>
+                            <Link className="mr-3" href="#">
+                              <Image
+                                src="atis-assets/social/twitter.svg"
+                                alt=""
+                                width={30}
+                                height={30}
+                                priority={true}
+                              />
+                            </Link>
+                            <Link href="#">
+                              <Image
+                                src="atis-assets/social/instagram.svg"
+                                alt=""
+                                width={30}
+                                height={30}
+                                priority={true}
+                              />
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div className="mb-6 w-full lg:w-1/2 px-4">
-                <div className="flex flex-wrap items-center bg-white rounded shadow overflow-hidden">
-                  <Image
-                    className="w-full lg:w-1/3 h-80 object-cover"
-                    src="/hero/hero1.png"
-                    alt="ian brown"
-                    width={100}
-                    height={100}
-                    priority={true}
-                  />
-                  <div className="w-full lg:w-2/3 lg:pl-6 p-4">
-                    <h4 className="mb-2 text-2xl font-bold font-heading">
-                      Ian Brown
-                    </h4>
-                    <p className="mb-4 text-gray-500 leading-loose">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed vitae felis at ante bibendum mollis et et mauris.
-                    </p>
-                    <div className="flex">
-                      <Link className="mr-3" href="#">
-                        <Image
-                          src="atis-assets/social/facebook.svg"
-                          alt="facebook"
-                          width={30}
-                          height={30}
-                          priority={true}
-                        />
-                      </Link>
-                      <Link className="mr-3" href="#">
-                        <Image
-                          src="atis-assets/social/twitter.svg"
-                          alt="twitter"
-                          width={30}
-                          height={30}
-                          priority={true}
-                        />
-                      </Link>
-                      <Link href="#">
-                        <Image
-                          src="atis-assets/social/instagram.svg"
-                          alt="instagram"
-                          width={30}
-                          height={30}
-                          priority={true}
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="mb-6 w-full lg:w-1/2 px-4">
-                <div className="flex flex-wrap items-center bg-white rounded shadow overflow-hidden">
-                  <Image
-                    className="w-full lg:w-1/3 h-80 object-cover"
-                    src="/hero/hero4.png"
-                    alt="daisy"
-                    width={500}
-                    height={500}
-                    priority={true}
-                  />
-                  <div className="w-full lg:w-2/3 lg:pl-6 p-4">
-                    <h4 className="mb-2 text-2xl font-bold font-heading">
-                      Daisy Carter
-                    </h4>
-                    <p className="mb-4 text-gray-500 leading-loose">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed vitae felis at ante bibendum mollis et et mauris.
-                    </p>
-                    <div className="flex">
-                      <Link className="mr-3" href="#">
-                        <Image
-                          src="atis-assets/social/facebook.svg"
-                          alt=""
-                          width={30}
-                          height={30}
-                          priority={true}
-                        />
-                      </Link>
-                      <Link className="mr-3" href="#">
-                        <Image
-                          src="atis-assets/social/twitter.svg"
-                          alt=""
-                          width={30}
-                          height={30}
-                          priority={true}
-                        />
-                      </Link>
-                      <Link href="#">
-                        <Image
-                          src="atis-assets/social/instagram.svg"
-                          alt=""
-                          width={30}
-                          height={30}
-                          priority={true}
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="mb-6 w-full lg:w-1/2 px-4">
-                <div className="flex flex-wrap items-center bg-white rounded shadow overflow-hidden">
-                  <Image
-                    className="w-full lg:w-1/3 h-80 object-cover"
-                    src="/hero/hero4.png"
-                    alt=""
-                    width={500}
-                    height={500}
-                    priority={true}
-                  />
-                  <div className="w-full lg:w-2/3 lg:pl-6 p-4">
-                    <h4 className="mb-2 text-2xl font-bold font-heading">
-                      Dennis Robertson
-                    </h4>
-                    <p className="mb-4 text-gray-500 leading-loose">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed vitae felis at ante bibendum mollis et et mauris.
-                    </p>
-                    <div className="flex">
-                      <Link className="mr-3" href="#">
-                        <Image
-                          src="atis-assets/social/facebook.svg"
-                          alt=""
-                          width={30}
-                          height={30}
-                          priority={true}
-                        />
-                      </Link>
-                      <Link className="mr-3" href="#">
-                        <Image
-                          src="atis-assets/social/twitter.svg"
-                          alt=""
-                          width={30}
-                          height={30}
-                          priority={true}
-                        />
-                      </Link>
-                      <Link href="#">
-                        <Image
-                          src="atis-assets/social/instagram.svg"
-                          alt=""
-                          width={30}
-                          height={30}
-                          priority={true}
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  ))
+                : null}
             </div>
           </div>
         </div>
