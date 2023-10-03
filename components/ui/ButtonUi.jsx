@@ -1,12 +1,23 @@
-"use client"
-export const ButtonUi = ({text}) => {
+"use client";
+import { useRouter } from "next/navigation";
+
+export const ButtonUi = ({ text }) => {
+  const router = useRouter();
+
+  const navigate = () => {
+    if (text) return router.back();
+  };
+
   return (
     <>
-      <button className="mb-4 py-4 w-full rounded text-sm bg-emerald-600 hover:bg-emerald-700 text-white font-bold leading-normal transition duration-200">
-       {text}
+      <button
+        className={`mb-4 py-4 rounded text-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold transition duration-200 ${
+          text.length > 8 ? "w-1/3  mx-auto flex justify-center items-center" : "w-full"
+        }`}
+        onClick={navigate}
+      >
+        {text}
       </button>
     </>
   );
 };
-
-

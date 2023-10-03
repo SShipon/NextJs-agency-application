@@ -1,4 +1,14 @@
-const Stats = () => {
+async function getData(){
+  const data = await fetch(process.env.BASE_URL + "StatList");
+
+  if(!data.ok) throw new Error("Stat data calling failed");
+
+  return data.json();
+}
+
+const Stats = async () => {
+  const { followers,  solved , customers, projects } = await getData();
+
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
@@ -21,7 +31,7 @@ const Stats = () => {
               </svg>
             </span>
 
-            <h3 className="text-2xl font-bold">250 324</h3>
+            <h3 className="text-2xl font-bold">{followers}</h3>
             <p className="text-gray-500">Followers</p>
           </div>
           <div className="mb-8 w-full md:w-1/2 lg:w-1/4 text-center">
@@ -46,7 +56,7 @@ const Stats = () => {
                 />
               </svg>
             </span>
-            <h3 className="text-2xl font-bold">6 510</h3>
+            <h3 className="text-2xl font-bold">{solved}</h3>
             <p className="text-gray-500">Solved Problems</p>
           </div>
           <div className="mb-8 w-full md:w-1/2 lg:w-1/4 text-center">
@@ -66,7 +76,7 @@ const Stats = () => {
                 />
               </svg>
             </span>
-            <h3 className="text-2xl font-bold">14 350</h3>
+            <h3 className="text-2xl font-bold">{customers}</h3>
             <p className="text-gray-500">Happy Customers</p>
           </div>
           <div className="mb-8 w-full md:w-1/2 lg:w-1/4 text-center">
@@ -91,7 +101,7 @@ const Stats = () => {
                 />
               </svg>
             </span>
-            <h3 className="text-2xl font-bold">149 324</h3>
+            <h3 className="text-2xl font-bold">{projects}</h3>
             <p className="text-gray-500">Projects</p>
           </div>
         </div>

@@ -2,7 +2,17 @@ import Link from "next/link";
 import { StartBtn } from "./ui/StartBtn";
 import Image from "next/image";
 
-const Hero = () => {
+async function getData(){
+  const data = await fetch(process.env.BASE_URL + "HeroList");
+
+  if(!data.ok) throw new Error("Hero List Calling failed");
+
+  return data.json()
+}
+
+const Hero = async () => {
+  const  { image1, image2, image3, image4 } = await getData()
+
   return (
     <>
       <section className="w-full bg-gray-50">
@@ -39,7 +49,7 @@ const Hero = () => {
                 <div className="flex flex-wrap lg:mb-4 lg:ml-6">
                   <Image
                     className="w-full md:w-1/2 lg:w-1/3 h-64 p-2 object-cover rounded-[36px] rounded-br-none"
-                    src="/hero/hero1.png"
+                    src={image1}
                     alt=""
                     width={500}
                     height={500}
@@ -48,7 +58,7 @@ const Hero = () => {
                   />
                   <Image
                     className="w-full md:w-1/2 lg:w-2/3 h-64 p-2 object-cover rounded-[36px] rounded-bl-none"
-                    src="/hero/hero2.jpg"
+                    src={image2}
                     alt=""
                     width={500}
                     height={500}
@@ -59,7 +69,7 @@ const Hero = () => {
                 <div className="flex flex-warm">
                   <Image
                     className="w-full md:w-1/2 lg:w-2/3 h-64 p-2 object-cover rounded-[36px] rounded-br-none"
-                    src="/hero/hero3.jpg"
+                    src={image3}
                     alt=""
                     width={500}
                     height={500}
@@ -68,7 +78,7 @@ const Hero = () => {
                   />
                   <Image
                     className=" md:w-1/2 lg:w-2/3 h-64 p-2 object-cover rounded-[36px] rounded-bl-none"
-                    src="/hero/hero4.png"
+                    src={image4}
                     alt=""
                     width={500}
                     height={500}

@@ -8,7 +8,7 @@ const HomePage = () => {
     <>
      <Hero />
      <Stats />
-     <FeatureProjects txt={true} />
+     <FeatureProjects txt={true} featureLength="6" />
      <Brands />
     </>
   )

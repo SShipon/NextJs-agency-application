@@ -218,7 +218,7 @@ const Navbar = () => {
             <Link className="mr-auto text-3xl font-bold leading-none" href="#">
               <Image
                 className="h-10"
-                src="atis-assets/logo/atis/atis-mono-black.svg"
+                src="/atis-assets/logo/atis/atis-mono-black.svg"
                 alt=""
                 width={100}
                 height={50}
