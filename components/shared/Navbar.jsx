@@ -32,7 +32,7 @@ const Navbar = () => {
         });
       }
     }
-
+/* back */
     if (backdrop.length) {
       for (var i = 0; i < backdrop.length; i++) {
         backdrop[i].addEventListener("click", function () {
